@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);
+    t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '795169496756642');
+    fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=795169496756642&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regista Agora</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:linear-gradient(180deg,#07101d 0%, #0b1320 100%);
+      color:white;
+      text-align:center;
+    }
+
+    .banner{
+      position:relative;
+    }
+
+    .banner img{
+      width:100%;
+      display:block;
+    }
+
+    .badge-top{
+      position:absolute;
+      top:14px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#ffd700;
+      color:#000;
+      font-weight:900;
+      font-size:13px;
+      padding:8px 14px;
+      border-radius:999px;
+      box-shadow:0 6px 20px rgba(0,0,0,.25);
+      white-space:nowrap;
+      z-index:3;
+    }
+
+    .lang-switcher{
+      position:absolute;
+      top:14px;
+      right:14px;
+      display:flex;
+      gap:8px;
+      z-index:4;
+    }
+
+    .lang-btn{
+      border:none;
+      cursor:pointer;
+      font-weight:900;
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(8,17,29,.88);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      transition:.2s ease;
+    }
+
+    .lang-btn.active{
+      background:#00ff88;
+      color:#000;
+      border-color:#00ff88;
+      box-shadow:0 0 16px rgba(0,255,136,.35);
+    }
+
+    .container{
+      padding:22px 18px 140px;
+      max-width:540px;
+      margin:0 auto;
+    }
+
+    .mini-proof{
+      display:inline-block;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.08);
+      color:#cfe7ff;
+      font-size:13px;
+      padding:8px 12px;
+      border-radius:999px;
+      margin-bottom:16px;
+    }
+
+    h1{
+      font-size:32px;
+      line-height:1.15;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    .green{
+      color:#00ff88;
+    }
+
+    .gold{
+      color:#ffd700;
+    }
+
+    .desc{
+      font-size:17px;
+      color:#d9e2f1;
+      line-height:1.6;
+      margin-bottom:24px;
+    }
+
+    .btn{
+      display:block;
+      width:100%;
+      background:#00ff88;
+      color:#000;
+      font-size:24px;
+      font-weight:900;
+      padding:20px;
+      border-radius:14px;
+      text-decoration:none;
+      box-shadow:0 10px 25px rgba(0,255,136,.35);
+      animation:pulse 1.2s infinite;
+      transition:.2s ease;
+    }
+
+    .btn:active{
+      transform:scale(.98);
+    }
+
+    .sticky{
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+      background:#08111d;
+      padding:12px;
+      box-shadow:0 -6px 20px rgba(0,0,0,.5);
+      border-top:1px solid rgba(255,255,255,.06);
+      z-index:1000;
+    }
+
+    .sticky a{
+      display:block;
+      background:#00ff88;
+      color:#000;
+      font-size:22px;
+      font-weight:900;
+      padding:18px;
+      border-radius:10px;
+      text-decoration:none;
+      max-width:540px;
+      margin:0 auto;
+      box-shadow:0 10px 25px rgba(0,255,136,.25);
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.04)}
+      100%{transform:scale(1)}
+    }
+
+    @media (max-width:520px){
+
+      .badge-top{
+        top:14px;
+        left:14px;
+        right:92px;
+        transform:none;
+        white-space:normal;
+        text-align:center;
+      }
+
+      .lang-switcher{
+        top:14px;
+        right:14px;
+      }
+    }
+
+    @media (max-width:420px){
+
+      h1{
+        font-size:28px;
+      }
+
+      .btn,
+      .sticky a{
+        font-size:21px;
+      }
+
+      .desc{
+        font-size:16px;
+      }
+
+      .badge-top{
+        font-size:12px;
+        padding:7px 12px;
+      }
+
+      .lang-btn{
+        font-size:11px;
+        padding:7px 9px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="banner">
+
+    <img src="banner2.jpeg" alt="Banner da campanha" id="bannerImage">
+
+    <div class="badge-top" id="badgeTop">
+      🔥 Oferta disponível agora em Moçambique
+    </div>
+
+    <div class="lang-switcher">
+      <button type="button" class="lang-btn" id="langPtBtn">PT</button>
+      <button type="button" class="lang-btn" id="langEnBtn">EN</button>
+    </div>
+
+  </div>
+
+  <div class="container">
+
+    <div class="mini-proof" id="miniProof">
+      ✅ Depósito fácil • ✅ Levantamento rápido • ✅ Acesso imediato
+    </div>
+
+    <h1 id="mainTitle">
+      Regista-te agora e aproveita o teu
+      <span class="gold">100% bónus</span>
+      no
+      <span class="green">primeiro depósito</span>
+    </h1>
+
+    <p class="desc" id="mainDesc">
+      Entra numa plataforma disponível em Moçambique, com métodos de pagamento que já conheces e um processo de registo rápido.
+    </p>
+
+    <a href="#" class="btn" id="mainRegisterBtn">
+      CRIAR CONTA EM 10 SEGUNDOS
+    </a>
+
+  </div>
+
+  
+  <script>
+
+    // LINKS
+    const REGISTER_LINK = "https://sshortly.net/2304f61";
+
+    // ELEMENTOS
+    const mainRegisterBtn = document.getElementById("mainRegisterBtn");
+    const stickyRegisterBtn = document.getElementById("stickyRegisterBtn");
+
+    const langPtBtn = document.getElementById("langPtBtn");
+    const langEnBtn = document.getElementById("langEnBtn");
+
+    const bannerImage = document.getElementById("bannerImage");
+    const badgeTop = document.getElementById("badgeTop");
+    const miniProof = document.getElementById("miniProof");
+    const mainTitle = document.getElementById("mainTitle");
+    const mainDesc = document.getElementById("mainDesc");
+
+    // TRADUÇÕES
+    const translations = {
+
+      pt: {
+
+        bannerSrc: "banner.png",
+
+        badgeTop: "🔥 Oferta disponível agora em Moçambique",
+
+        miniProof: "✅ Depósito fácil • ✅ Levantamento rápido • ✅ Acesso imediato",
+
+        mainTitle:
+          'Regista-te agora e aproveita o teu <span class="gold">100% bónus</span> no <span class="green">primeiro depósito</span>',
+
+        mainDesc:
+          "Entra numa plataforma disponível em Moçambique, com métodos de pagamento que já conheces e um processo de registo rápido.",
+
+        mainRegisterBtn:
+          "CRIAR CONTA EM 10 SEGUNDOS",
+
+        stickyRegisterBtn:
+          "REGISTAR AGORA"
+
+      },
+
+      en: {
+
+        bannerSrc: "banner01.png",
+
+        badgeTop: "🔥 Offer available now in South Africa (SA)",
+
+        miniProof: "✅ Easy deposit • ✅ Fast withdrawals • ✅ Instant access",
+
+        mainTitle:
+          'Register now and enjoy your <span class="gold">100% bonus</span> on your <span class="green">first deposit</span>',
+
+        mainDesc:
+          "Join a platform available in South Africa (SA), with payment methods you already know and a quick registration process.",
+
+        mainRegisterBtn:
+          "CREATE ACCOUNT IN 10 SECONDS",
+
+        stickyRegisterBtn:
+          "REGISTER NOW"
+      }
+    };
+
+    let currentLanguage = "pt";
+
+    // PIXEL
+    function trackMetaEvent(eventName, params = {}) {
+
+      try {
+
+        if (typeof fbq === "function") {
+          fbq("track", eventName, params);
+        }
+
+      } catch (error) {
+        console.warn(error);
+      }
+    }
+
+    // TRADUÇÃO
+    function applyLanguage(lang){
+
+      currentLanguage = lang;
+
+      const t = translations[lang];
+
+      bannerImage.src = t.bannerSrc;
+
+      badgeTop.innerHTML = t.badgeTop;
+
+      miniProof.innerHTML = t.miniProof;
+
+      mainTitle.innerHTML = t.mainTitle;
+
+      mainDesc.innerHTML = t.mainDesc;
+
+      mainRegisterBtn.innerHTML = t.mainRegisterBtn;
+
+      stickyRegisterBtn.innerHTML = t.stickyRegisterBtn;
+
+      langPtBtn.classList.toggle("active", lang === "pt");
+
+      langEnBtn.classList.toggle("active", lang === "en");
+    }
+
+    // DETECTAR IDIOMA
+    function getInitialLanguage(){
+
+      const browserLanguage =
+        (navigator.language || "pt").toLowerCase();
+
+      if(browserLanguage.startsWith("en")){
+        return "en";
+      }
+
+      return "pt";
+    }
+
+    // CLIQUE BOTÃO
+    function handleRegisterClick(buttonName){
+
+      trackMetaEvent("Lead", {
+
+        page_name: "regista_agora",
+
+        button_name: buttonName,
+
+        destination: REGISTER_LINK,
+
+        language: currentLanguage
+
+      });
+
+      setTimeout(function(){
+
+        window.location.href = REGISTER_LINK;
+
+      }, 300);
+    }
+
+    // EVENTOS
+    mainRegisterBtn.addEventListener("click", function(e){
+
+      e.preventDefault();
+
+      handleRegisterClick("main_register_btn");
+    });
+
+    stickyRegisterBtn.addEventListener("click", function(e){
+
+      e.preventDefault();
+
+      handleRegisterClick("sticky_register_btn");
+    });
+
+    langPtBtn.addEventListener("click", function(){
+
+      applyLanguage("pt");
+    });
+
+    langEnBtn.addEventListener("click", function(){
+
+      applyLanguage("en");
+    });
+
+    // INICIALIZAÇÃO
+    applyLanguage(getInitialLanguage());
+
+  </script>
+
+</body>
+</html>
